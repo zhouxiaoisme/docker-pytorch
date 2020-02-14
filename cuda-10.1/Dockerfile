@@ -7,13 +7,11 @@ FROM nvidia/cuda:10.1-base-ubuntu16.04
 # RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
 # RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
+RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
 # --------------- [ ZX ADD END  ] -------------------
-
-
 
 # Install some basic utilities
 RUN apt-get update && apt-get install -y \
@@ -23,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     git \
     bzip2 \
     libx11-6 \
+    vim \
  && rm -rf /var/lib/apt/lists/*
 
 # Create a working directory
@@ -108,6 +107,17 @@ RUN pip install h5py-cache==1.0  -i https://pypi.tuna.tsinghua.edu.cn/simple
 # Install Torchnet, a high-level framework for PyTorch
 RUN pip install torchnet==0.0.4  -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+# --------------- [ ZX ADD START ] -------------------
+# Install common python ML & DL package
+RUN pip install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install torchsummary -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install certifi==2019.9.11 -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install numpy==1.17.2 -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install Pillow==6.2.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install six==1.12.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install tqdm==4.36.1 -i https://pypi.tuna.tsinghua.edu.cn/simple
+# --------------- [ ZX ADD END  ] -------------------
+
 # Install Requests, a Python library for making HTTP requests
 RUN conda install -y requests=2.19.1 \
  && conda clean -ya
@@ -117,17 +127,24 @@ RUN conda install -y graphviz=2.40.1 python-graphviz=0.8.4 \
  && conda clean -ya
 
 # --------------- [ ZX ADD START ] -------------------
-# RUN echo "deb http://mirrors.163.com/ubuntu/ precise main universerestricted multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb http://mirrors.163.com/ubuntu/ precise main universerestricted multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
-# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN sudo echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
 # --------------- [ ZX ADD END  ] -------------------
+
+# --------------- [ ZX ADD START ] -------------------
+# RUN sudo apt-get update && sudo apt-get install -y \
+#     vim \
+# && sudo rm -rf /var/lib/apt/lists/*
+# --------------- [ ZX ADD END  ] -------------------
+
 
 # Install OpenCV3 Python bindings
 RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends \
