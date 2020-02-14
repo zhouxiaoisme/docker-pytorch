@@ -125,3 +125,10 @@ docker run --rm -it --init \
   -e "DISPLAY" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
   anibali/pytorch python3 -c "import tkinter; tkinter.Tk().mainloop()"
 ```
+
+
+## Zx PyTorch Docker image
+
+Please refer to zxDokcer_README.md
+[![zx prebuilt and Exported Docker url](https://pan.baidu.com/s/1EcsMz2gvmS3vDlUcSuXqDA  Password: 5qn5)
+
