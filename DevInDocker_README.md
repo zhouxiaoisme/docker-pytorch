@@ -1,6 +1,6 @@
 # 在本项目setup的pytoch docker中 使用 sjtuTrafficEvent 的 procedure
 ## 一.  docker环境准备
-### 1.  build pytorch for cuda10.1 docker（可选）
+### 1.  build pytorch for cuda10.1 docker（步骤1和2可选其一）
 在你的本地console环境中执行如下命令：
 >$ chmod a+x ./buildMyDockerImg.sh
 
@@ -15,7 +15,7 @@
 ><br> REPOSITORY          TAG                    IMAGE ID            CREATED             SIZE
 ><br>anibali/pytorch     cuda-10.1               9d5db51cd8a6        4 days ago          4.16GB
 
-### 2.  download and load prebuilt docker（可选）
+### 2.  download and load prebuilt docker（步骤1和2可选其一）
 **由于步骤1中，build docker过程视网络链接可能运行较长，因此，步骤1可以跳过不做，而是直接使用zxDocker_README.md文件中给出的url获取prebuild 好的docker image, 如：zxSave_ubuntu16.04_pytorch_cuda10.1_v0.tar***
 
 2.1) 从URL中将其下载到你本地某个位置，比如：/zx2/work/sjtuTrafficEventDeployModel/目录下
