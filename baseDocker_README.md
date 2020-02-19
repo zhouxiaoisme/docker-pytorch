@@ -129,6 +129,6 @@ docker run --rm -it --init \
 
 ## Zx PyTorch Docker image
 
-Please refer to zxDokcer_README.md
-[![zx prebuilt and Exported Docker url](https://pan.baidu.com/s/1EcsMz2gvmS3vDlUcSuXqDA  Password: 5qn5)
 
+zx prebuilt and Exported Docker url
+https://pan.baidu.com/s/1EcsMz2gvmS3vDlUcSuXqDA  Password: 5qn5

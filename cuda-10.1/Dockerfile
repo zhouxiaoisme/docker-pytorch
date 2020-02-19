@@ -7,10 +7,10 @@ FROM nvidia/cuda:10.1-base-ubuntu16.04
 # RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
 # RUN echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
 
-RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list 
-RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list 
-RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list 
-RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list 
+# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse"     >> /etc/apt/sources.list
+# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse"     >> /etc/apt/sources.list
+# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse"     >> /etc/apt/sources.list
+# RUN echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse"     >> /etc/apt/sources.list
 # --------------- [ ZX ADD END  ] -------------------
 
 # Install some basic utilities
@@ -163,5 +163,4 @@ RUN conda install -y -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menp
 # Set the default command to python3
 # CMD ["python3"]
 # --------------- [ ZX MOD END ] -------------------
-CMD echo "Enter docker .... sucecess!"
-CMD /bin/bash
+CMD ["/bin/bash"]
