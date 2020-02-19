@@ -19,8 +19,8 @@ echo
 exit
 fi
 
-echo sudo docker import /zx2/work/sjtuTrafficEventDeployModel/zxSave_ubuntu16.04_pytorch_cuda10.1_v0.tar zhouxiao/pytorch:cuda-10.1
-sudo docker import /zx2/work/sjtuTrafficEventDeployModel/zxSave_ubuntu16.04_pytorch_cuda10.1_v0.tar zhouxiao/pytorch:cuda-10.1
+echo sudo docker load /zx2/work/sjtuTrafficEventDeployModel/zxSave_ubuntu16.04_pytorch_cuda10.1_v0.tar 
+sudo docker load -i /zx2/work/sjtuTrafficEventDeployModel/zxSave_ubuntu16.04_pytorch_cuda10.1_v0.tar 
 echo "Now docker image anibali/pytorch:cuda-10.1 has been loaded!"
 echo "Please run ./runMyDocker.sh to load this image and enter container ..."
 echo ""
