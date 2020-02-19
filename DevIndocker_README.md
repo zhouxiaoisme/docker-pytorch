@@ -1,4 +1,4 @@
-# pytoch-docker build sjtuTrafficEvent procedure
+# 在本项目setup的pytoch docker中 使用 sjtuTrafficEvent 的 procedure
 ## 一.  docker环境准备
 ### 1.  build pytorch for cuda10.1 docker（可选）
 在你的本地console环境中执行如下命令：
